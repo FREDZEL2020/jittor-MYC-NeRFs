@@ -1,0 +1,5 @@
+* 最初显示mlp的梯度不存在，是因为：最初训练开始是不进行rendermodule的渲染
+* pytorch中的～对应于jittor中的logical_not而不是bitwise_not
+* 增加了config bbox和near far
+
+* nerf++ 必须保证前景不默认设成白色背景，否则导致只有前景在渲染

@@ -1,0 +1,48 @@
+
+dataset_name = blender
+datadir = ../data/Coffee
+expname =  Coffee
+basedir = ./log
+
+bbox = [-0.2350, -1.7393, -1.5537,  0.2350,  2.0214,  1.4530]
+near = 0.5
+far = 6.0
+white_bkgd = True
+
+n_iters = 30000
+batch_size = 4096
+
+N_voxel_init = 2097156 # 128**3
+N_voxel_final = 27000000 # 300**3
+upsamp_list = [2000,3000,4000,5500,7000]
+update_AlphaMask_list = [2000,4000]
+
+N_vis = 1
+vis_every = 1000
+
+render_test = 1
+
+n_lamb_sigma = [16,16,16]
+n_lamb_sh = [48,48,48]
+model_name = TensorVMSplit
+
+
+shadingMode = MLP_Fea
+fea2denseAct = softplus
+
+view_pe = 2
+fea_pe = 2
+
+L1_weight_inital = 4e-5
+L1_weight_rest = 2e-5
+TV_weight_density = 0.3
+TV_weight_app = 0.3
+rm_weight_mask_thre = 1e-3
+
+## please uncomment following configuration if hope to training on cp model
+#model_name = TensorCP
+#n_lamb_sigma = [96]
+#n_lamb_sh = [288]
+#N_voxel_final = 125000000 # 500**3
+#L1_weight_inital = 1e-5
+#L1_weight_rest = 1e-5

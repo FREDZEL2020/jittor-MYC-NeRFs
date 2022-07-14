@@ -1,0 +1,49 @@
+
+dataset_name = blender
+datadir = ../data/Scar
+expname =  Scar
+basedir = ./log
+
+normal_vector_penalty_weight = 0.5
+bbox = [-5.0, -5.0, -5.0, 5.0, 5.0, 5.0]
+near = 5
+far = 40
+white_bkgd=True
+
+n_iters = 400000
+batch_size = 4096
+
+N_voxel_init = 2097156 # 128**3
+N_voxel_final = 27000000 # 300**3
+upsamp_list = [2000,3000,4000,5500,7000]
+update_AlphaMask_list = [2000,4000]
+
+N_vis = 1
+vis_every = 2000
+
+render_test = 1
+
+n_lamb_sigma = [16,16,16]
+n_lamb_sh = [48,48,48]
+model_name = REFTensoRF
+
+
+shadingMode = MLP_Fea
+fea2denseAct = softplus
+
+view_pe = 2
+fea_pe = 2
+
+# L1_weight_inital = 1e-5
+# L1_weight_rest = 1e-6
+TV_weight_density = 2.
+TV_weight_app = 2.
+rm_weight_mask_thre = 1e-6
+
+## please uncomment following configuration if hope to training on cp model
+#model_name = TensorCP
+#n_lamb_sigma = [96]
+#n_lamb_sh = [288]
+#N_voxel_final = 125000000 # 500**3
+#L1_weight_inital = 1e-5
+#L1_weight_rest = 1e-5
